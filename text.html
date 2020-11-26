@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotate</title>
+    <style></style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 100px;
+        }
+
+        li {
+            float: left;
+            margin: 0 20px;
+            height: 50px;
+            width: 50px;
+            perspective: 500px;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            text-align: center;
+            line-height: 50px;
+            transition: all .3s;
+            transform-style: preserve-3d;
+        }
+
+        nav,
+        aside,
+        header,
+        footer,
+        main,
+        article {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+        }
+        main {
+            transform: translateZ(25px)
+        }
+        aside {
+            background-color: red;
+            transform: translateX(-25px) rotateY(-90deg);
+        }
+        footer {
+            background-color: purple;
+            transform: translateY(25px) rotateX(-90deg);
+        }
+        nav {
+            background-color: green;
+            transform: translateX(25px) rotateY(90deg);
+        }
+        header {
+            background-color: orange;
+            transform: translateY(-25px) rotateX(90deg);
+        }
+        article {
+            background-color: blue;
+            transform: translateZ(-25px) rotateY(180deg);
+        }
+        .one:hover {
+            transform: rotateY(-90deg);
+        }
+        .two:hover {
+            transform: rotateY(90deg);
+        }
+        .tree:hover {
+            transform: rotateX(90deg);
+        }
+        .four:hover {
+            transform: rotateX(-90deg);
+        }
+        .five:hover {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="box one">
+                <main>正面</main>
+                <aside>左面</aside>
+                <footer>下面</footer>
+                <nav>右面</nav>
+                <header>顶面</header>
+                <article>背面</article>
+            </div>
+        </li>
+        <li>
+            <div class="box two">
+                <main>正面</main>
+                <aside>左面</aside>
+                <footer>下面</footer>
+                <nav>右面</nav>
+                <header>顶面</header>
+                <article>背面</article>
+            </div>
+        </li>
+        <li>
+            <div class="box tree">
+                <main>正面</main>
+                <aside>左面</aside>
+                <footer>下面</footer>
+                <nav>右面</nav>
+                <header>顶面</header>
+                <article>背面</article>
+            </div>
+        </li>
+        <li>
+            <div class="box four">
+                <main>正面</main>
+                <aside>左面</aside>
+                <footer>下面</footer>
+                <nav>右面</nav>
+                <header>顶面</header>
+                <article>背面</article>
+            </div>
+        </li>
+        <li>
+            <div class="box five">
+                <main>正面</main>
+                <aside>左面</aside>
+                <footer>下面</footer>
+                <nav>右面</nav>
+                <header>顶面</header>
+                <article>背面</article>
+            </div>
+        </li>
+    </ul>
+</body>
+
+</html>
