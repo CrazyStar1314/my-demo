@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes movePulse {
+            0% {}
+            50% {
+                transform: translateZ(30px);
+            }
+        }
+        @keyframes moveFlash {
+            0%{}
+            25%{opacity: 0;}
+            50%{opacity: 1;}
+            75%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        @keyframes moveShakeX {
+            0%,12.5%,37.5%,62.5%,87.5% {transform: translateX(-5px);}
+            25%,50%,75%,100%{transform: translateX(5px);}
+        }
+        @keyframes moveShakeY {
+            0%,12.5%,37.5%,62.5%,87.5% {transform: translateY(-5px);}
+            25%,50%,75%,100%{transform: translateY(5px);}
+        }
+        @keyframes swing {
+            0%{}
+            25%{transform: rotate(10deg);}
+            50%{transform: rotate(-10deg);}
+            75%{transform: rotate(5deg);}
+            100%{transform: rotate(-5deg);}
+        }
+        @keyframes Left {
+            0%{}
+            10%{transform: translateX(-2000px);}
+            90%{transform: translateZ(-20px);}
+            100%{
+                transform: translateZ(20px);
+                font-size: 30px;
+                color: purple;
+                }
+        }
+        .container {
+            margin: 0 auto;
+            perspective:500px;
+            transform-style: preserve-3d;
+        }
+        div {
+            margin-bottom: 10px;
+            width: 200px;
+            height: 50px;
+            color: purple;
+            text-align: center;
+            line-height: 50px;
+            font: 700 30px arial;
+        }
+        .pulse {
+            animation: movePulse 1s linear infinite;
+        }
+        .flash {
+            animation: moveFlash 1s linear infinite;
+        }
+        .shakeX {
+            animation: moveShakeX 1s linear infinite;
+        }
+        .shakeY {
+            animation: moveShakeY 1s linear infinite;
+        }
+        .swing {
+            animation: swing 1s linear ;
+        }
+        .Left {
+            font-size: 20px;
+            color: rgb(146, 126, 146);
+            transform: translateX(-20000px);
+            animation: Left 2s linear forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 这里新开网页时，会出现字出现往左移动的情情况 -->
+        <div class="pulse">Pulse.css</div>
+        <div class="flash">Flash.css</div>
+        <div class="shakeX">ShakeX.css</div>
+        <div class="shakeY">ShakeY.css</div>
+        <div class="swing">Swing.css</div>
+        <!-- 这个从Z轴有远到近的效果做不出完美的，感觉哪里不对 -->
+        <div class="Left">BackInLeft.css</div>
+    </div>
+</body>
+</html>
