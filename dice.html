@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div[class^="dice"] {
+            display: flex;
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+            margin: 10px auto;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        div[class^="child"] {
+            background-color: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        div .child_one,
+        div .child_four {
+            background-color: red;
+        }
+
+        /* 第三面 */
+        .child_three:nth-child(1) {
+            align-self: flex-start;
+        }
+
+        .child_three:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        /* 第四面*/
+        .child_four:nth-child(2n+1) {
+            margin-right: 30px;
+        }
+
+        /* 第五面
+        第五面使用了多次设置外边距的方法，不知道是不是正确解决办法  */
+        .child_five:nth-child(3n+1) {
+            margin-right: 30px;
+
+        }
+
+        .child_five:nth-child(3) {
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        /* 第六面 */
+        .dice_six {
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dice_one">
+        <div class="child_one"></div>
+    </div>
+    <div class="dice_two">
+        <div class="child_two"></div>
+        <div class="child_two"></div>
+    </div>
+    <div class="dice_three">
+        <div class="child_three"></div>
+        <div class="child_three"></div>
+        <div class="child_three"></div>
+    </div>
+    <div class="dice_four">
+        <div class="child_four"></div>
+        <div class="child_four"></div>
+        <div class="child_four"></div>
+        <div class="child_four"></div>
+    </div>
+    <div class="dice_five">
+        <div class="child_five"></div>
+        <div class="child_five"></div>
+        <div class="child_five"></div>
+        <div class="child_five"></div>
+        <div class="child_five"></div>
+    </div>
+    <div class="dice_six">
+        <div class="child_six"></div>
+        <div class="child_six"></div>
+        <div class="child_six"></div>
+        <div class="child_six"></div>
+        <div class="child_six"></div>
+        <div class="child_six"></div>
+    </div>
+</body>
+
+</html>
