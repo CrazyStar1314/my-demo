@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 350px;
+            height: 350px;
+            margin: auto;
+            position: relative;
+        }
+
+        button {
+            position: absolute;
+            box-sizing: border-box;
+            width: 40px;
+            height: 20px;
+            left: 50%;
+            top: 50%;
+            margin-left: -40px;
+            margin-top: -15px;
+            border-radius: 25%;
+        }
+
+        button:nth-of-type(2) {
+            margin-left: 5px;
+        }
+
+        button:nth-of-type(3) {
+            margin-left: -20px;
+            margin-top: 10px;
+        }
+
+        .furitBox {
+            display: flex;
+            border: 1px solid pink;
+            background-color: pink;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        .checkBox {
+            position: absolute;
+            box-sizing: border-box;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            border-radius: 15%;
+        }
+
+        .item {
+
+            width: 50px;
+            height: 50px;
+            flex: 14%;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 15%;
+        }
+
+        .item:nth-child(2n+8) {
+            margin-right: 250px;
+        }
+
+        .item:nth-child(2n+18) {
+            margin: 0;
+        }
+
+        .item:nth-child(3n+1) {
+            background-color: rgb(108, 236, 108);
+        }
+
+        .item:nth-child(3n+2) {
+            background-color: rgb(58, 188, 211);
+        }
+
+        .item:nth-child(3n+3) {
+            background-color: rgb(240, 240, 11);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="furitBox">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+            <div class="item">11</div>
+            <div class="item">12</div>
+            <div class="item">13</div>
+            <div class="item">14</div>
+            <div class="item">15</div>
+            <div class="item">16</div>
+            <div class="item">17</div>
+            <div class="item">18</div>
+            <div class="item">19</div>
+            <div class="item">20</div>
+            <div class="item">21</div>
+            <div class="item">22</div>
+            <div class="item">23</div>
+            <div class="item ">24</div>
+        </div>
+        <button>Star</button>
+        <button>Stop</button>
+        <button>Rest</button>
+        <div class="checkBox"></div>
+    </div>
+</body>
+<script>
+    var iT = document.querySelectorAll('.item');
+    var sBT = document.querySelectorAll('button')[0];
+    var tBt = document.querySelectorAll('button')[1];
+    var rBt = document.querySelectorAll('button')[2];
+    var cBox = document.getElementsByClassName('checkBox')[0];
+    var timer = '';
+    var x = 50;
+    var y = 50;
+    sBT.onclick = () => {
+        clearInterval(timer);
+         timer = setInterval(() => {
+            cBox.style.left = cBox.offsetLeft + x + 'px';
+            if (cBox.offsetLeft > 300) {
+                cBox.style.left = cBox.offsetLeft - x + 'px';
+                cBox.style.top = cBox.offsetTop + y + 'px';
+                if (cBox.offsetLeft == 300 && cBox.offsetTop > 300) {
+                    x *= -1;
+                    cBox.style.left = cBox.offsetLeft + x + 'px';
+                    cBox.style.top = cBox.offsetTop - y + 'px';
+
+                }
+            } else if (cBox.offsetLeft < 0 && 0 <= cBox.offsetTop <= 300) {
+                cBox.style.left = cBox.offsetLeft - x + 'px';
+                cBox.style.top = cBox.offsetTop - y + 'px';
+            }
+            if (cBox.offsetTop < 0) {
+                x *= -1;
+                cBox.style.left = cBox.offsetLeft + x + 'px';
+                cBox.style.top = cBox.offsetTop + y + 'px';
+            }
+
+        }, 100)
+
+    };
+    tBt.onclick = () => {
+        clearInterval(timer);
+    }
+    rBt.onclick = () => {
+        location.reload();
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9x9</title>
+    <style>
+        span {
+            border: 1px solid pink;
+            padding: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    var body = document.querySelector('body');
+    for (var i = 1; i < 10; i++) {
+        for (let j = 1; j <= i;j++){
+        var sPan = document.createElement('span');
+        sPan.innerHTML = j + " * " + i + " = " + i * j;
+        body.appendChild(sPan);
+        }
+        document.write('<br/>');
+    }
+</script>
+
+</html>
