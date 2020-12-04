@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .container {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .wrapper {
+            position: absolute;
+            height: 600px;
+            /*宽度后期通过js变动 
+            width: 900px; */
+            /* 解决slide子元素的间距,空格和换行符仍有大小 */
+            font-size: 0px;
+            left: 0;
+            top: 0;
+        }
+
+        .wrapper:hover {
+            cursor: pointer;
+        }
+
+        /* 标准图 */
+        .slide {
+            display: inline-block;
+            width: 600px;
+            height: 500px;
+            border: none;
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+            perspective: 500px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            transform: translateZ(-500px);
+        }
+        /* 左边图 */
+        .pre-slide img {
+            transform: translateZ(0px) rotateY(45deg);
+            transition: all 1.5s;
+        }
+        /* 中间图 */
+        .cur-slide img {
+            transform: translateZ(100px);
+            transition: all 1.5s;
+        }
+        /* 右边图 */
+        .next-slide img {
+            transform: translateZ(0px) rotateY(-45deg);
+            transition: all 1.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="slide pre-slide">
+                <img src="./01.jpg" alt="">
+            </div>
+            <div class="slide cur-slide">
+                <img src="./02.jpg" alt="">
+            </div>
+            <div class="slide next-slide">
+                <img src="./03.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./04.jpg" alt="">
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    let wrapper = document.querySelector('.wrapper'),
+        slides = document.getElementsByClassName('slide'),
+        container = document.querySelector('.container'),
+        flag = true,                     //窗口移动方向
+        prePos = 0,                      //记录最前一张图下标
+        timer = null,                    //定时器
+        num = slides.length,  
+        distance = slides[0].clientWidth,  //记录轮播时的偏移量
+        downPos;                         //按鼠标时鼠标的坐标
+    init();
+    function init() {
+        let firstNode = slides[0].cloneNode(true);
+        let secondNode = slides[1].cloneNode(true);
+        wrapper.appendChild(firstNode);
+        wrapper.appendChild(secondNode);
+        // 根据轮播图的实际图片设置wrapper的宽度
+        wrapper.style.width = slides.length * distance + 'px';
+        container.style.width = 3 * distance + 'px';
+        timer = setInterval(move, 3000);
+        wrapper.addEventListener('mousedown', handleMouseDown, true);
+        wrapper.addEventListener('mouseenter', handleMouseenter);
+        wrapper.addEventListener('mouseleave', handleMouseleave);
+
+    }
+    // 这里的移动函数是照搬的，没有很理解全部意思，能看懂，实际用的，可能会记不起这种写法
+    function move() {
+        updateClassName(prePos, 'slide');
+        updateClassName(prePos + 1, 'slide');
+        updateClassName(prePos + 2, 'slide');
+        if (flag) {
+            if (prePos === slides.length - 3) {
+                prePos = 0;
+            } else {
+                prePos++;
+            }
+        } else {
+            if (prePos === 0) {
+                prePos = slides.length - 3;
+            } else {
+                prePos--;
+            }
+        }
+        wrapper.style.left = -prePos * distance + 'px';
+        updateClassName(prePos, 'slide pre-slide');
+        updateClassName(prePos + 1, 'slide cur-slide');
+        updateClassName(prePos + 2, 'slide next-slide');
+    }
+    function updateClassName(pos, name) {
+        switch (pos) {
+            case slides.length - 2:
+                slides[0].className = slides[slides.length - 2].className = name;
+                break;
+            case slides.length - 1:
+                slides[1].className = slides[slides.length - 1].className = name;
+                break;
+            default:
+                slides[pos].className = name;
+                break;
+        }
+    }
+    function handelMouseUp(e) {
+        // 点击坐标>松开坐标 右，
+        //点击坐标<松开左边 左
+        if (e.clientX < downPos) {
+            flag = true;
+        } else if (e.clientX > downPos) {
+            flag = false;
+        }
+        move();
+    }
+    function handleMouseenter(e) {
+        clearInterval(timer);
+    }
+    function handleMouseleave() {
+        flag = true;
+        timer = setInterval(move, 3000);
+    }
+    function handleMouseDown(e) {
+        e.preventDefault();
+        downPos = e.clientX;
+        wrapper.addEventListener('mouseup', handelMouseUp);
+    }
+</script>
+
+</html>
