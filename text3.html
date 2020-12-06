@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.6作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 第一个图 */
+        header {
+            display: flex;
+            width: 300px;
+            background-color: rgb(252, 247, 247);
+            font-size: 25px;
+            margin: 0 auto;
+            border: 1px solid white;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+        }
+        .demo_one {
+            width: 70px;
+            height: 100px;
+            background-color: rgb(255, 251, 0);
+            line-height: 100px;
+        }
+
+        .demo_two {
+            display: flex;
+            width: 70px;
+            height: 150px;
+            background-color: rgb(145, 241, 145);
+            align-self: center;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .demo_three {
+            display: flex;
+            width: 70px;
+            height: 200px;
+            background-color: rgb(107, 162, 235);
+            align-self: center;
+            flex-direction:column;
+            justify-content:center;
+        }
+        header span {
+            height: 25px;
+        }
+
+        /* 第二图 */
+        main {
+            display: flex;
+            width: 300px;
+            background-color: rgb(252, 247, 247);
+            font-size: 25px;
+            margin: 50px auto;
+            border: 1px solid white;
+            align-items: flex-end;
+            flex-wrap:wrap-reverse;
+            text-align: center;
+        }
+        main div {
+            width: 55px;
+            height: 70px;
+            line-height: 70px;
+            background-color: rgb(145, 241, 145);
+        }
+        main div:first-child {
+            background-color: rgb(255, 251, 0);
+        }
+        main div:last-child {
+            background-color: rgb(107, 162, 235);
+        }
+
+        /* 第三图 */
+        footer {
+            display: flex;
+            width: 300px;
+            background-color: rgb(252, 247, 247);
+            font-size: 25px;
+            margin: 50px auto;
+            border: 1px solid white;
+            align-items: flex-end;
+            justify-content:space-around;
+            flex-wrap:wrap;
+            text-align: center;
+        
+        }
+        footer div {
+            width: 54px;
+            height: 70px;
+            line-height: 70px;
+            margin: 20px 0 20px 5px;
+            background-color: rgb(145, 241, 145);
+        }
+        footer div:first-child {
+            background-color: rgb(255, 251, 0);
+        }
+        footer div:last-child {
+            background-color: rgb(107, 162, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        本次作业问题:
+        突然想起就编程而言，是不是应该没有唯一标准的“答案”，只要能实现效果且呈现在各种端口不会报错，是不是就算完成？上一次写3D轮播时就记起这问题，忘了写下来，这次重新布局突然记起这个事，编程应该没有所谓的唯一正确答案吧？
+     -->
+
+
+
+
+    <!-- 第一张图 -->
+    <header>
+        <!-- 不能解决文字的分行，只能通过添加span来实现 -->
+        <div class="demo_one">1</div>
+        <div class="demo_two">
+            <span>2</span>
+            <span>2</span>
+            <span>2</span>
+        </div>
+        <div class="demo_three">
+            <span>3</span>
+            <span>3</span>
+            <span>3</span>
+            <span>3</span>
+            <span>3</span>
+        </div>
+    </header>
+
+    <!-- 二三张图暂时没发现问题，或者是我解题思路是否是正确的思路 -->
+    <!-- 第二张图 -->
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </main>
+
+    <!-- 第三张图 -->
+    <footer>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </footer>
+</body>
+
+</html>
