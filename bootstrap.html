@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
-
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,150 +11,212 @@
         }
 
         body {
-            min-width: 300px;
+            min-width: 400px;
             position: relative;
         }
 
-        li,
-        a,
-        span {
-            text-decoration: none;
-            list-style: none;
-            color: rgba(204, 204, 204, 0.829);
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-        }
+        @media screen and (min-width:200px) {
+            html {
+                font-size: 14px;
+            }
 
-        header {
-            position: fixed;
-            width: 100%;
-            background-color: rgb(34, 32, 32);
-            line-height: 50px;
-            z-index: 999;
-        }
+            li,
+            a,
+            span {
+                text-decoration: none;
+                list-style: none;
+                color: rgba(204, 204, 204, 0.829);
+                cursor: pointer;
+                text-align: center;
+            }
 
-        header .title {
-            float: left;
-            font-size: 18px;
-        }
+            header {
+                position: fixed;
+                width: 100%;
+                background-color: rgb(34, 32, 32);
+                line-height: 45px;
+                z-index: 999;
+            }
 
-        .bt_show {
-            display: none;
-            margin-right: 20px;
-           
-        }
-        .bt_show a {
-            padding: 8px;
-            border: 1px solid  rgb(34, 32, 32);
-            border-radius: 5px;
-            color: white;
-            background-color: rgba(204, 204, 204, 0.288);;
-        }
-        .h_right li {
-            float: left;
-            margin-left: 30px;
-        }
+            header .title {
+                /* float: left; */
+                font-size: 18px;
+                margin-left: 40px;
+            }
 
-        .h_right li:last-child,
-        span {
-            float: right;
-            margin-right: 20px;
-        }
+            .bt_show {
+                float: right;
+                display: none;
+                margin-right: 15px;
+            }
 
-        .container {
-            position: absolute;
-            left: 0;
-            top: 49px;
-            width: 100%;
-
-        }
-
-        section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: linear-gradient(45deg, #020031, #6d3353);
-        }
-
-        section span {
-            color: rgba(255, 255, 255, 0.904);
-
-        }
-
-        section span:nth-of-type(1) {
-            font-size: 70px;
-            font-weight: 700;
-            margin-top: 80px;
-        }
-
-        section span:nth-of-type(2) {
-            color: rgba(255, 255, 255, 0.671);
-            font-size: 20px;
-            margin: 20px 0;
-        }
-
-        section span:nth-of-type(3) {
-            margin-top: 20px;
-            margin-bottom: 120px;
-        }
-
-        section a {
-            font-size: 25px;
-            padding: 10px 30px;
-            background-color: #337ab7;
-            border-radius: 10px;
-        }
-
-        aside {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        aside span:nth-of-type(1) {
-            font-size: 50px;
-            font-weight: 800;
-            color: black;
-            margin-top: 35px;
-        }
-
-        aside span:nth-of-type(2) {
-            font-size: 16px;
-            color: rgba(124, 119, 119, 0.829);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            width: 150px;
-            font-size: 35px;
-            font-weight: 700;
-            color: white;
-            background-color: rgba(126, 38, 126, 0.829);
-            margin: 50px;
-            padding: 25px 60px;
-        }
-        
-        @media screen and (max-width:650px) {
-            .h_right li:nth-of-type(n+1) {
-                float: none;
-                text-align: justify;
+            .bt_show a {
+                padding: 7px;
+                border: 1px solid rgba(204, 204, 204, 0.288);
+                border-radius: 5px;
+                color: white;
+                background-color: rgb(34, 32, 32);
             }
 
             .h_right li {
+                float: left;
+                margin-left: 20px;
+                
+            }
+            /* .h_right li:last-child {
+                display: none;
+            } */
+            .h_right .red {
+                position: relative;
+            }
+            .h_right .red::after {
+                content: '';
+                position: absolute;
+                padding: 3px;
+                top: 0px;
+                border: 1px solid rgba(255, 0, 0, 0.664);
+                border-radius: 50%;
+                background-color: rgba(255, 0, 0, 0.767);
+            }
+            .container {
+                position: absolute;
+                left: 0;
+                top: 45px;
+                width: 100%;
+            }
+
+            section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: linear-gradient(45deg, #020031, #6d3353);
+            }
+
+            section span {
+                color: rgba(255, 255, 255, 0.904);
+            }
+
+            section span:nth-of-type(1) {
+                font-size: 70px;
+                font-weight: 700;
+                margin-top: 80px;
+            }
+
+            section span:nth-of-type(2) {
+                color: rgba(255, 255, 255, 0.671);
+                font-size: 20px;
+                margin: 20px 0;
+            }
+
+            section span:nth-of-type(3) {
+                margin-top: 20px;
+                margin-bottom: 120px;
+            }
+
+            section a {
+                font-size: 25px;
+                padding: 10px 30px;
+                background-color: #337ab7;
+                border-radius: 10px;
+                box-shadow: 0 4px 1px #334bb7;
+            }
+
+            aside {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            aside span:nth-of-type(1) {
+                font-size: 50px;
+                font-weight: 800;
+                color: black;
+                margin-top: 35px;
+            }
+
+            aside span:nth-of-type(2) {
+                font-size: 16px;
+                color: rgba(124, 119, 119, 0.829);
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                width: 150px;
+                font-size: 35px;
+                font-weight: 700;
+                color: white;
+                background-color: rgba(126, 38, 126, 0.829);
+                margin: 50px;
+                padding: 25px 60px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (min-width: 990px) {
+            header .navbar {
+                width: 990px !important;
+            }
+
+            .h_right li:last-child {
+                float: right;
+                margin: 0 20px 0 40px;
+            }
+
+            .h_right li:last-child {
+                display: block !important;
+            }
+        }
+
+        @media screen and (min-width: 765px) {
+            header .navbar {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .h_right  {
+                display: block !important;
+            }
+            header .title {
+                float: left;
+            }
+            .h_right li:last-child {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:764px) {
+            .h_right li {
+                float: none;
+                text-align: justify;
+                margin-left: 15px;
+            }
+
+            .h_right  {
                 display: none;
             }
 
             .h_right li:first-child {
                 border-top: 1px solid black;
-            } 
+            }
+
             header span {
                 display: block;
+            }
+
+            header .title {
+                font-size: 20px;
+                margin-left: 15px;
             }
 
             header .bt_show {
@@ -165,6 +226,10 @@
             section span {
                 margin: 0;
                 padding: 0 15px;
+            }
+
+            section a {
+                padding: 10px 15px;
             }
 
             aside span {
@@ -178,42 +243,26 @@
                 margin-top: 20px;
             }
         }
-        @media screen and (max-width:850px) {
-            header li a,
-            span {
-                font-size: 12px;
-            }
-        }
-        @media screen and (max-width:780px) {
-            .title {
-                float: left;
-            }
-            .h_right li {
-                margin: 0 10px;
-            }
-            .h_right li:last-child {
-                display: none;
-            }
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="#" class="title">Bootstrap中文网</a>
-        <span class="bt_show">
-            <a href="#">按钮</a>
-        </span>
-        <ul class="h_right">
-            <li><a href="#">Bootstrap3中文文档</a></li>
-            <li><a href="#">Bootstrap4中文文档</a></li>
-            <li><a href="#">Sass教程</a></li>
-            <li><a href="#">Less教程</a></li>
-            <li><a href="#">jQuery API</a></li>
-            <li><a href="#">网站实例</a></li>
-            <li><a href="#">关于</a></li>
-        </ul>
-        
+        <div class="navbar">
+            <a href="#" class="title">Bootstrap中文网</a>
+            <span class="bt_show">
+                <a href="#">按钮</a>
+            </span>
+            <ul class="h_right">
+                <li><a href="#">Bootstrap3中文文档</a></li>
+                <li><a href="#">Bootstrap4中文文档</a></li>
+                <li><a href="#">Sass教程</a></li>
+                <li><a href="#">Less教程</a></li>
+                <li><a href="#">jQuery API</a></li>
+                <li><a href="#" class="red">网站实例</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </div>
     </header>
     <div class="container">
         <section>
@@ -237,22 +286,17 @@
 </body>
 <script>
     var bt = document.getElementsByClassName('bt_show')[0];
-    var title = document.getElementsByClassName('title')[0];
     var ul = document.querySelector('.h_right');
-    var lis = ul.querySelectorAll('li');
+    console.log(ul.children[6]);
+    ul.children[6].style.color = 'red!important';
     var flag = true;
     bt.addEventListener('click', function () {
         if (flag) {
-            title.style.float = 'none';
-            for (var i = 0; i < lis.length; i++) {
-                lis[i].style.display = 'block';
-            }
+            ul.style.display = 'block';
+            ul.children[6].style.display = 'block!important';
             flag = false;
-        }else{
-            title.style.float = 'left';
-            for (var i = 0; i < lis.length; i++) {
-                lis[i].style.display = 'none';
-            }
+        } else {
+            ul.style.display = 'none';
             flag = true;
         }
     })
