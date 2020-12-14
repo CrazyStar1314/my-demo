@@ -9,12 +9,6 @@
             margin: 0;
             padding: 0;
         }
-
-        body {
-            min-width: 400px;
-            position: relative;
-        }
-
         @media screen and (min-width:200px) {
             html {
                 font-size: 14px;
@@ -63,9 +57,6 @@
                 margin-left: 20px;
                 
             }
-            /* .h_right li:last-child {
-                display: none;
-            } */
             .h_right .red {
                 position: relative;
             }
@@ -97,15 +88,15 @@
             }
 
             section span:nth-of-type(1) {
-                font-size: 70px;
+                font-size: 90px;
                 font-weight: 700;
                 margin-top: 80px;
             }
 
             section span:nth-of-type(2) {
                 color: rgba(255, 255, 255, 0.671);
-                font-size: 20px;
-                margin: 20px 0;
+                font-size: 24px;
+                margin-bottom: 20px;
             }
 
             section span:nth-of-type(3) {
@@ -128,15 +119,18 @@
             }
 
             aside span:nth-of-type(1) {
-                font-size: 50px;
+                width: 450px;
+                font-size: 42px;
                 font-weight: 800;
                 color: black;
-                margin-top: 35px;
+                margin: 35px auto 0 ;
             }
 
             aside span:nth-of-type(2) {
-                font-size: 16px;
-                color: rgba(124, 119, 119, 0.829);
+                width: 430px;
+                font-size: 14px;
+                color: rgba(56, 54, 54, 0.945);
+                margin:0 auto;
             }
 
             nav ul {
@@ -227,20 +221,35 @@
                 margin: 0;
                 padding: 0 15px;
             }
+            section span:nth-of-type(1) {
+                font-size: 70px;
+                margin-top: 50px;
+            }
 
+            section span:nth-of-type(2) {
+                font-size: 18px;
+            }
+
+            section span:nth-of-type(3) {
+                margin-top: 20px;
+                margin-bottom: 120px;
+            }
             section a {
                 padding: 10px 15px;
             }
-
-            aside span {
-                margin: 0;
-                padding: 0 40px;
-                line-height: 50px;
+            aside span:nth-of-type(1) {
+                font-size: 30px;
             }
-
             aside span:nth-of-type(2) {
-                line-height: 20px;
-                margin-top: 20px;
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width:375px) {
+            aside span:nth-of-type(1) {
+                width: 200px;
+            }
+            aside span:nth-of-type(2) {
+                width: 200px;
             }
         }
     </style>
